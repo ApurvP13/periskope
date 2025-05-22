@@ -38,7 +38,7 @@ export default function ChatPage() {
 
       const joinedChats = chatMembersData?.map((cm) => cm.chats);
       setChats(joinedChats || []);
-      setSelectedChatId(joinedChats?.[0]?.id || null);
+      setSelectedChatId(joinedChats?.[0]?.[0]?.id || null);
     };
 
     fetchData();
@@ -147,7 +147,7 @@ export default function ChatPage() {
         // Extract online users from presence state
         const online = Object.keys(state).map((key) => {
           const userInfo = state[key][0];
-          return userInfo.user_id;
+          return userInfo.presence_ref;
         });
 
         setOnlineUsers(online);
