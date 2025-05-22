@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { supabase } from "../lib/supabaseClient";
 import IconBar from "@/components/IconBar";
 import { IoMdSend } from "react-icons/io";
-import ChatBar from "@/components/chatBar";
+import ChatBar from "@/components/ChatBar";
 
 export default function ChatPage() {
   const [userId, setUserId] = useState<string | null>(null);
